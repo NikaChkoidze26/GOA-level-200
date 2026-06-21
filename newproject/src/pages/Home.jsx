@@ -6,11 +6,11 @@ function Home(){
 
 const stats=[
 
-"500+ Students",
+"700+ Students",
 
-"100+ Projects",
+"countless+ Projects",
 
-"20 Mentors"
+"30+ Mentors"
 
 ];
 
