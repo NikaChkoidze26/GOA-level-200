@@ -1,59 +1,69 @@
-import Hero from "../components/Hero";
+import { Link } from "react-router-dom";
 
 
-function Home() {
-
-
-const stats = [
-"500+ Students",
-"100+ Projects",
-"20 Mentors"
-];
+function Hero(){
 
 
 return (
 
-<>
+<section className="
+min-h-[80vh]
+flex items-center
+bg-linear-to-br
+from-green-500
+to-emerald-900
+text-white
+">
 
 
-<Hero />
-
-<acronym title=""></acronym>
-<section className="max-w-6xl mx-auto py-20 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-6">
-
-
-{
-stats.map((item,index)=>(
+<div className="
+max-w-6xl
+mx-auto
+px-6
+animate-fade
+">
 
 
-<div 
-key={index}
-className="rounded-3xl p-10 shadow-xl bg-white dark:bg-gray-900 text-black dark:text-white border dark:border-gray-700 hover:-translate-y-3 hover:shadow-2xl transition"
->
+<h1 className="
+text-6xl
+font-black
+">
+
+Goal-Oriented Academy
+
+</h1>
 
 
-<h2 className="text-4xl font-black text-center text-green-600">
+<p className="
+text-xl
+mt-6
+max-w-xl
+">
 
-{item}
+Become a developer.
+Learn modern technologies and build real projects.
 
-</h2>
+</p>
+
+
+
+<Link to="/about">
+  <button className="mt-10 px-8 py-4 rounded-full bg-white text-green-700 font-bold hover:scale-110 transition">
+    Start Learning
+  </button>
+</Link>
 
 
 </div>
 
 
-))
-}
-
-
 </section>
 
 
-</>
-
 )
+
 
 }
 
 
-export default Home;
+export default Hero;

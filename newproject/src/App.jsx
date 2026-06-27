@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
@@ -10,27 +10,19 @@ import Courses from "./pages/Courses";
 import Contact from "./pages/Contact";
 
 function App() {
-
   const [dark, setDark] = useState(false);
 
-  return (
-    <div
-      className={`
-        ${dark ? "dark" : ""}
-        min-h-screen
-        bg-white
-        dark:bg-gray-950
-        text-black
-        dark:text-white
-        transition-all
-        duration-300
-      `}
-    >
+  useEffect(() => {
+    if (dark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [dark]);
 
-      <Navbar
-        dark={dark}
-        setDark={setDark}
-      />
+  return (
+    <div className="min-h-screen bg-white dark:bg-gray-950 text-black dark:text-white transition-all duration-300">
+      <Navbar dark={dark} setDark={setDark} />
 
       <Routes>
         <Route path="/" element={<Home />} />
@@ -40,7 +32,6 @@ function App() {
       </Routes>
 
       <Footer />
-
     </div>
   );
 }
